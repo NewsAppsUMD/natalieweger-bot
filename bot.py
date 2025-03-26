@@ -1,23 +1,14 @@
-import requests
+from htmldate import find_date
 
-# List of Department of Education pages to track
+# List of URLs to process
 urls = [
-    "https://www.ed.gov/higher-education/find-college-or-educational-program",
-    "https://www.ed.gov/higher-education/paying-college",
-    "https://www.ed.gov/higher-education/manage-your-loans",  
+    "https://today.umd.edu/umd-launches-institute-focused-on-ethical-ai-development",
+    "https://www.trails.umd.edu/",
+    "https://artiamas.umd.edu/",
+    "https://ml.umd.edu/",
 ]
 
-def check_url_status(url):
-    try:
-        response = requests.get(url, timeout=10)
-        if response.status_code in [404, 403, 503]:
-            print(f"⚠️ {url} is down! Status code: {response.status_code}")
-        else:
-            print(f"✅ {url} is up. Status code: {response.status_code}")
-    except requests.RequestException as e:
-        print(f"❌ Error checking {url}: {e}")
-
-# Run the check for all URLs
+# Loop through each URL and find the publication date
 for url in urls:
-    check_url_status(url)
-
+    date = find_date(url)  # Extract publication date from the webpage
+    print(f"{url}: {date}")  # Print the URL and its publication date

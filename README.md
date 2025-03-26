@@ -12,3 +12,10 @@ For my bot, I'm thinking I could just work with the original downloaded list of 
 As a first step though, I uploaded the same CSV from The Times onto this repository. I also started up my code and downloaded a few Python libraries that I might need. 
 
 I'm assuming that I would use requests in Python to each domain, and see if I get any errors in return. This can then be logged into another CSV that will trigger an alert the page is no longer running. Something I'm still wondering, though, is that the original NYT csv is multiple main website pages, and I'm not sure how to find website subpages of the main pages and then compile it into a CSV.  
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+1. make a list of research centers from UMD 
+
+
